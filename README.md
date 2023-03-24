@@ -1,8 +1,8 @@
-# {Company} Postman Collection
+# PackageX Postman Collection
 
-This repository contains a [Postman Collection](/collection.json) for the [{company} API](docs_url).
+This repository contains a [Postman Collection](/collection.json) for the [PackageX API](https://docs.packagex.io/docs/getting-started/welcome).
 
-[![Open in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/fern-api/workspace/fern-{company})
+[![Open in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/fern-api/workspace/fern-packagex/overview)
 
 ## What is a Postman Collection?
 
