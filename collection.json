@@ -1,0 +1,1739 @@
+{
+  "info": {
+    "name": "PackageX API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": null
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.packagex.io",
+      "type": "string"
+    },
+    {
+      "key": "apiKey",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "PX-API-KEY",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "_type": "container",
+      "description": null,
+      "name": "Address",
+      "item": [
+        {
+          "_type": "endpoint",
+          "name": "Autocomplete",
+          "request": {
+            "description": "Allows users to submit a piece of an address string and have the API respond with the best possible options",
+            "url": {
+              "raw": "{{baseUrl}}/v1/address/autocomplete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "address",
+                "autocomplete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "PX-API-KEY",
+                "value": "{{apiKey}}",
+                "type": "string",
+                "description": null
+              },
+              {
+                "type": "text",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"address\": \"500 7th Ave\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "Allows users to submit a piece of an address string and have the API respond with the best possible options",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/address/autocomplete",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "address",
+                    "autocomplete"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"address\": \"500 7th Ave\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "description": null,
+              "body": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"address\": \"500 7th Avenue, San Diego, CA, USA\",\n            \"matched_text\": \"500 7th Avenue\",\n            \"autocomplete_text\": \"San Diego, CA, USA\"\n        },\n        {\n            \"address\": \"500 7th Avenue, New York, NY, USA\",\n            \"matched_text\": \"500 7th Avenue\",\n            \"autocomplete_text\": \"New York, NY, USA\"\n        }\n    ],\n    \"message\": \"You received two options to autocomplete your input\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/address/autocomplete\"\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "_type": "endpoint",
+          "name": "Parse",
+          "request": {
+            "description": "Takes addresses in multiple different formats and returns the address in the PackageX address mode.",
+            "url": {
+              "raw": "{{baseUrl}}/v1/address/parse",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "address",
+                "parse"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "PX-API-KEY",
+                "value": "{{apiKey}}",
+                "type": "string",
+                "description": null
+              },
+              {
+                "type": "text",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"address\": \"500 7th Ave, New York, NY\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "Takes addresses in multiple different formats and returns the address in the PackageX address mode.",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/address/parse",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "address",
+                    "parse"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"address\": \"500 7th Ave, New York, NY\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "description": null,
+              "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"defnewfed_93392\",\n        \"hash\": \"dac0efe_w9dw\",\n        \"line1\": \"500 7th Ave\",\n        \"line2\": \"Fl 10\",\n        \"city\": \"New York\",\n        \"state\": \"New York\",\n        \"state_code\": \"NY\",\n        \"country\": \"United States\",\n        \"country_code\": \"US\",\n        \"postal_code\": \"10018\",\n        \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n        \"textarea\": \"500 7th Ave\",\n        \"timezone\": \"EST\",\n        \"verified\": true\n    },\n    \"message\": \"You received the address in PackageX address mode\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/address/parse\"\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "container",
+      "description": null,
+      "name": "Inventory",
+      "item": [
+        {
+          "_type": "container",
+          "description": null,
+          "name": "Fulfillment",
+          "item": [
+            {
+              "_type": "endpoint",
+              "name": "Create Fulfillment",
+              "request": {
+                "description": "Add the required inventory that needs to be shipped to the desired recipient from your specified location.",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/fulfillment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "fulfillment"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n    \"recipient\": {\n        \"name\": \"Odin Oliver\",\n        \"email\": \"odin.oliver@packagex.io\",\n        \"phone\": \"4844836699\",\n        \"contact_id\": \"fwefwv28281\",\n        \"address\": {\n            \"id\": \"fefewfe_9292\",\n            \"hash\": \"efneif_2921\",\n            \"line1\": \"600 B. Street\",\n            \"line2\": \"Suite 300\",\n            \"city\": \"San Diego\",\n            \"state\": \"California\",\n            \"state_code\": \"CA\",\n            \"country\": \"United States\",\n            \"country_code\": \"US\",\n            \"postal_code\": \"90101\",\n            \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n            \"textarea\": \"600 B. Street\",\n            \"timezone\": \"PST\",\n            \"verified\": true\n        }\n    },\n    \"inventory\": [\n        {\n            \"id\": \"item_5og9NZ92SYzHKFTPYSEnVK\",\n            \"verified_qty\": 25\n        },\n        {\n            \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n            \"verified_qty\": 50,\n            \"packaged_length\": 2,\n            \"packaged_width\": 3,\n            \"packaged_height\": 4,\n            \"packaged_weight\": 6\n        },\n        {\n            \"name\": \"Custom Item\",\n            \"verified_qty\": 5,\n            \"packaged_length\": 2,\n            \"packaged_width\": 3,\n            \"packaged_height\": 4,\n            \"packaged_weight\": 6,\n            \"sku\": \"237489237489\",\n            \"image_url\": \"https://i.imgur.com/FKmX7dt.gif\"\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "Add the required inventory that needs to be shipped to the desired recipient from your specified location.",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/fulfillment",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "fulfillment"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n    \"recipient\": {\n        \"name\": \"Odin Oliver\",\n        \"email\": \"odin.oliver@packagex.io\",\n        \"phone\": \"4844836699\",\n        \"contact_id\": \"fwefwv28281\",\n        \"address\": {\n            \"id\": \"fefewfe_9292\",\n            \"hash\": \"efneif_2921\",\n            \"line1\": \"600 B. Street\",\n            \"line2\": \"Suite 300\",\n            \"city\": \"San Diego\",\n            \"state\": \"California\",\n            \"state_code\": \"CA\",\n            \"country\": \"United States\",\n            \"country_code\": \"US\",\n            \"postal_code\": \"90101\",\n            \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n            \"textarea\": \"600 B. Street\",\n            \"timezone\": \"PST\",\n            \"verified\": true\n        }\n    },\n    \"inventory\": [\n        {\n            \"id\": \"item_5og9NZ92SYzHKFTPYSEnVK\",\n            \"verified_qty\": 25\n        },\n        {\n            \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n            \"verified_qty\": 50,\n            \"packaged_length\": 2,\n            \"packaged_width\": 3,\n            \"packaged_height\": 4,\n            \"packaged_weight\": 6\n        },\n        {\n            \"name\": \"Custom Item\",\n            \"verified_qty\": 5,\n            \"packaged_length\": 2,\n            \"packaged_width\": 3,\n            \"packaged_height\": 4,\n            \"packaged_weight\": 6,\n            \"sku\": \"237489237489\",\n            \"image_url\": \"https://i.imgur.com/FKmX7dt.gif\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"ful_dwdh3239ubcejbcjd\",\n        \"created_at\": 1679591515,\n        \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n        \"recipient\": {\n            \"name\": \"Odin Oliver\",\n            \"email\": \"odin.oliver@packagex.io\",\n            \"phone\": \"4844836699\",\n            \"contact_id\": \"fwefwv28281\",\n            \"address\": {\n                \"id\": \"fefewfe_9292\",\n                \"hash\": \"efneif_2921\",\n                \"line1\": \"600 B. Street\",\n                \"line2\": \"Suite 300\",\n                \"city\": \"San Diego\",\n                \"state\": \"California\",\n                \"state_code\": \"CA\",\n                \"country\": \"United States\",\n                \"country_code\": \"US\",\n                \"postal_code\": \"90101\",\n                \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n                \"textarea\": \"600 B. Street\",\n                \"timezone\": \"PST\",\n                \"verified\": true\n            }\n        },\n        \"inventory\": [\n            {\n                \"id\": \"item_5og9NZ92SYzHKFTPYSEnVK\",\n                \"verified_qty\": 25\n            },\n            {\n                \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n                \"verified_qty\": 50,\n                \"packaged_length\": 2,\n                \"packaged_width\": 3,\n                \"packaged_height\": 4,\n                \"packaged_weight\": 6\n            },\n            {\n                \"name\": \"Custom Item\",\n                \"verified_qty\": 5,\n                \"packaged_length\": 2,\n                \"packaged_width\": 3,\n                \"packaged_height\": 4,\n                \"packaged_weight\": 6,\n                \"id\": \"item_1wefewf33232hzmW54\",\n                \"sku\": \"237489237489\",\n                \"image_url\": \"https://i.imgur.com/FKmX7dt.gif\"\n            }\n        ]\n    },\n    \"message\": \"You created a fulfillment\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/fulfillment\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            },
+            {
+              "_type": "endpoint",
+              "name": "Create Parcel",
+              "request": {
+                "description": "Add the box or boxes into which you're going to pack the inventory items.",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/fulfillment/:fulfillmentId/parcels",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "fulfillment",
+                    ":fulfillmentId",
+                    "parcels"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "fulfillmentId",
+                      "description": null,
+                      "value": "ful_dwdh3239ubcejbcjd"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"parcel\": {\n        \"id\": \"prcl_dneidn333brb3jrj3b\",\n        \"length\": 10,\n        \"width\": 10,\n        \"height\": 10\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "Add the box or boxes into which you're going to pack the inventory items.",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/fulfillment/:fulfillmentId/parcels",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "fulfillment",
+                        ":fulfillmentId",
+                        "parcels"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "fulfillmentId",
+                          "description": null,
+                          "value": "ful_dwdh3239ubcejbcjd"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"parcel\": {\n        \"id\": \"prcl_dneidn333brb3jrj3b\",\n        \"length\": 10,\n        \"width\": 10,\n        \"height\": 10\n    }\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"ful_dwdh3239ubcejbcjd\",\n        \"created_at\": 1679591515,\n        \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n        \"parcels\": [\n            {\n                \"id\": \"prcl_fnweifnief9292\",\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 10\n            }\n        ],\n        \"recipient\": {\n            \"name\": \"Odin Oliver\",\n            \"email\": \"odin.oliver@packagex.io\",\n            \"phone\": \"4844836699\",\n            \"contact_id\": \"fwefwv28281\",\n            \"address\": {\n                \"id\": \"fefewfe_9292\",\n                \"hash\": \"efneif_2921\",\n                \"line1\": \"600 B. Street\",\n                \"line2\": \"Suite 300\",\n                \"city\": \"San Diego\",\n                \"state\": \"California\",\n                \"state_code\": \"CA\",\n                \"country\": \"United States\",\n                \"country_code\": \"US\",\n                \"postal_code\": \"90101\",\n                \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n                \"textarea\": \"600 B. Street\",\n                \"timezone\": \"PST\",\n                \"verified\": true\n            }\n        },\n        \"inventory\": [\n            {\n                \"id\": \"item_5og9NZ92SYzHKFTPYSEnVK\",\n                \"verified_qty\": 25\n            },\n            {\n                \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n                \"verified_qty\": 50,\n                \"packaged_length\": 2,\n                \"packaged_width\": 3,\n                \"packaged_height\": 4,\n                \"packaged_weight\": 6\n            },\n            {\n                \"name\": \"Custom Item\",\n                \"verified_qty\": 5,\n                \"packaged_length\": 2,\n                \"packaged_width\": 3,\n                \"packaged_height\": 4,\n                \"packaged_weight\": 6,\n                \"id\": \"item_fewf44t43g4g43g4g4\",\n                \"sku\": \"237489237489\",\n                \"image_url\": \"https://i.imgur.com/FKmX7dt.gif\"\n            }\n        ]\n    },\n    \"message\": \"You created a parcel\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/fulfillment/{fulfillment}/parcels\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            },
+            {
+              "_type": "endpoint",
+              "name": "Pack Parcel",
+              "request": {
+                "description": "Pack the items into the parcel(s) that you have added.",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/fulfillment/:fulfillmentId/parcels/:parcelId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "fulfillment",
+                    ":fulfillmentId",
+                    "parcels",
+                    ":parcelId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "fulfillmentId",
+                      "description": null,
+                      "value": "ful_dwdh3239ubcejbcjd"
+                    },
+                    {
+                      "key": "parcelId",
+                      "description": null,
+                      "value": "prcl_fnweifnief9292"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"inventory\": [\n        {\n            \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n            \"verified_qty\": 2\n        },\n        {\n            \"id\": \"temp_5og9NZ92SYzHKFTPYSEnVK\",\n            \"verified_qty\": 2,\n            \"damaged_qty\": 5\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "Pack the items into the parcel(s) that you have added.",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/fulfillment/:fulfillmentId/parcels/:parcelId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "fulfillment",
+                        ":fulfillmentId",
+                        "parcels",
+                        ":parcelId"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "fulfillmentId",
+                          "description": null,
+                          "value": "ful_dwdh3239ubcejbcjd"
+                        },
+                        {
+                          "key": "parcelId",
+                          "description": null,
+                          "value": "prcl_fnweifnief9292"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"inventory\": [\n        {\n            \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n            \"verified_qty\": 2\n        },\n        {\n            \"id\": \"temp_5og9NZ92SYzHKFTPYSEnVK\",\n            \"verified_qty\": 2,\n            \"damaged_qty\": 5\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"ful_dwdh3239ubcejbcjd\",\n        \"status\": \"packed\",\n        \"created_at\": 1679591515,\n        \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n        \"parcels\": [\n            {\n                \"id\": \"prcl_fnweifnief9292\",\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 10,\n                \"inventory\": {\n                    \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n                    \"verified_qty\": 2\n                }\n            }\n        ],\n        \"recipient\": {\n            \"name\": \"Odin Oliver\",\n            \"email\": \"odin.oliver@packagex.io\",\n            \"phone\": \"4844836699\",\n            \"contact_id\": \"fwefwv28281\",\n            \"address\": {\n                \"id\": \"fefewfe_9292\",\n                \"hash\": \"efneif_2921\",\n                \"line1\": \"600 B. Street\",\n                \"line2\": \"Suite 300\",\n                \"city\": \"San Diego\",\n                \"state\": \"California\",\n                \"state_code\": \"CA\",\n                \"country\": \"United States\",\n                \"country_code\": \"US\",\n                \"postal_code\": \"90101\",\n                \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n                \"textarea\": \"600 B. Street\",\n                \"timezone\": \"PST\",\n                \"verified\": true\n            }\n        },\n        \"inventory\": [\n            {\n                \"id\": \"item_5og9NZ92SYzHKFTPYSEnVK\",\n                \"verified_qty\": 25\n            },\n            {\n                \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n                \"verified_qty\": 50,\n                \"packaged_length\": 2,\n                \"packaged_width\": 3,\n                \"packaged_height\": 4,\n                \"packaged_weight\": 6\n            },\n            {\n                \"name\": \"Custom Item\",\n                \"verified_qty\": 5,\n                \"packaged_length\": 2,\n                \"packaged_width\": 3,\n                \"packaged_height\": 4,\n                \"packaged_weight\": 6,\n                \"sku\": \"237489237489\",\n                \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n                \"image_url\": \"https://i.imgur.com/FKmX7dt.gif\"\n            }\n        ]\n    },\n    \"message\": \"You packed a parcel\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/fulfillment/{fulfillment}/parcels/{parcel}\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            },
+            {
+              "_type": "endpoint",
+              "name": "Delete Parcel",
+              "request": {
+                "description": "If you decide to delete the parcel from the fulfillment, any inventory attributed to that parcel will be removed and reset.",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/fulfillment/:fulfillmentId/parcels/:parcelId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "fulfillment",
+                    ":fulfillmentId",
+                    "parcels",
+                    ":parcelId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "fulfillmentId",
+                      "description": null,
+                      "value": "ful_dwdh3239ubcejbcjd"
+                    },
+                    {
+                      "key": "parcelId",
+                      "description": null,
+                      "value": "prcl_fnweifnief9292"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": null
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "If you decide to delete the parcel from the fulfillment, any inventory attributed to that parcel will be removed and reset.",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/fulfillment/:fulfillmentId/parcels/:parcelId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "fulfillment",
+                        ":fulfillmentId",
+                        "parcels",
+                        ":parcelId"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "fulfillmentId",
+                          "description": null,
+                          "value": "ful_dwdh3239ubcejbcjd"
+                        },
+                        {
+                          "key": "parcelId",
+                          "description": null,
+                          "value": "prcl_fnweifnief9292"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": null
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"message\": \"You deleted a parcel\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/fulfillment/{fulfillment}/parcels/{parcel}\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            },
+            {
+              "_type": "endpoint",
+              "name": "Update",
+              "request": {
+                "description": "Mark the fulfillment as packed.",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/fulfillment/:fulfillmentId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "fulfillment",
+                    ":fulfillmentId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "fulfillmentId",
+                      "description": null,
+                      "value": "ful_dwdh3239ubcejbcjd"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"status\": \"packed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "Mark the fulfillment as packed.",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/fulfillment/:fulfillmentId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "fulfillment",
+                        ":fulfillmentId"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "fulfillmentId",
+                          "description": null,
+                          "value": "ful_dwdh3239ubcejbcjd"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"status\": \"packed\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"ful_dwdh3239ubcejbcjd\",\n        \"status\": \"packed\",\n        \"created_at\": 1679591515,\n        \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n        \"parcels\": [\n            {\n                \"id\": \"prcl_fnweifnief9292\",\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 10,\n                \"inventory\": {\n                    \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n                    \"verified_qty\": 2\n                }\n            }\n        ],\n        \"recipient\": {\n            \"name\": \"Odin Oliver\",\n            \"email\": \"odin.oliver@packagex.io\",\n            \"phone\": \"4844836699\",\n            \"contact_id\": \"fwefwv28281\",\n            \"address\": {\n                \"id\": \"fefewfe_9292\",\n                \"hash\": \"efneif_2921\",\n                \"line1\": \"600 B. Street\",\n                \"line2\": \"Suite 300\",\n                \"city\": \"San Diego\",\n                \"state\": \"California\",\n                \"state_code\": \"CA\",\n                \"country\": \"United States\",\n                \"country_code\": \"US\",\n                \"postal_code\": \"90101\",\n                \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n                \"textarea\": \"600 B. Street\",\n                \"timezone\": \"PST\",\n                \"verified\": true\n            }\n        },\n        \"inventory\": [\n            {\n                \"id\": \"item_5og9NZ92SYzHKFTPYSEnVK\",\n                \"verified_qty\": 25\n            },\n            {\n                \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n                \"verified_qty\": 50,\n                \"packaged_length\": 2,\n                \"packaged_width\": 3,\n                \"packaged_height\": 4,\n                \"packaged_weight\": 6\n            },\n            {\n                \"name\": \"Custom Item\",\n                \"verified_qty\": 5,\n                \"packaged_length\": 2,\n                \"packaged_width\": 3,\n                \"packaged_height\": 4,\n                \"packaged_weight\": 6,\n                \"sku\": \"237489237489\",\n                \"id\": \"item_1nCNpqtyepe48BMNhzmW54\",\n                \"image_url\": \"https://i.imgur.com/FKmX7dt.gif\"\n            }\n        ]\n    },\n    \"message\": \"You marked fulfillment as packed\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/fulfillment/{fulfillment}\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "container",
+          "description": null,
+          "name": "Item",
+          "item": [
+            {
+              "_type": "endpoint",
+              "name": "Create Item",
+              "request": {
+                "description": null,
+                "url": {
+                  "raw": "{{baseUrl}}/v1/items",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "items"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"My item name\",\n    \"sku\": \"123345\",\n    \"gtin\": \"987654\",\n    \"packaged_length\": 5,\n    \"packaged_width\": 6,\n    \"packaged_height\": 7,\n    \"packaged_weight\": 8\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": null,
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/items",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "items"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"My item name\",\n    \"sku\": \"123345\",\n    \"gtin\": \"987654\",\n    \"packaged_length\": 5,\n    \"packaged_width\": 6,\n    \"packaged_height\": 7,\n    \"packaged_weight\": 8\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"created_at\": 1679591515,\n        \"id\": \"debebw3933hden\",\n        \"name\": \"My item name\",\n        \"sku\": \"123345\",\n        \"gtin\": \"987654\",\n        \"packaged_length\": 5,\n        \"packaged_width\": 6,\n        \"packaged_height\": 7,\n        \"packaged_weight\": 8,\n        \"status\": \"created\"\n    },\n    \"message\": \"You created an item\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/items\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            },
+            {
+              "_type": "endpoint",
+              "name": "Update Item",
+              "request": {
+                "description": "Updates a single item. When updating inventory, you increment and decrement quantities by passing in positive and negative integers. Lastly, you can optionally provide a layout value to be more specific about the item's exact whereabouts in that location",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/items/:itemId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "items",
+                    ":itemId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "itemId",
+                      "description": null,
+                      "value": "given-item-id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Updated Name\",\n    \"levels\": [\n        {\n            \"location_id\": \"loc_8GiCVuqZqBJi43v2WebaME\",\n            \"verified_qty\": 30,\n            \"id\": \"lvl_fewfwef90c803cecee\"\n        },\n        {\n            \"location_id\": \"loc_dKa43ncARLdGENQPUq2CoX\",\n            \"verified_qty\": -50,\n            \"id\": \"lvl_fewfwef90c803cecee\"\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "Updates a single item. When updating inventory, you increment and decrement quantities by passing in positive and negative integers. Lastly, you can optionally provide a layout value to be more specific about the item's exact whereabouts in that location",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/items/:itemId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "items",
+                        ":itemId"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "itemId",
+                          "description": null,
+                          "value": "given-item-id"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"Updated Name\",\n    \"levels\": [\n        {\n            \"location_id\": \"loc_8GiCVuqZqBJi43v2WebaME\",\n            \"verified_qty\": 30,\n            \"id\": \"lvl_fewfwef90c803cecee\"\n        },\n        {\n            \"location_id\": \"loc_dKa43ncARLdGENQPUq2CoX\",\n            \"verified_qty\": -50,\n            \"id\": \"lvl_fewfwef90c803cecee\"\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"created_at\": 1679591515,\n        \"id\": \"debebw3933hden\",\n        \"name\": \"Updated Name\",\n        \"sku\": \"123345\",\n        \"gtin\": \"987654\",\n        \"packaged_length\": 5,\n        \"packaged_width\": 6,\n        \"packaged_height\": 7,\n        \"packaged_weight\": 8,\n        \"status\": \"created\",\n        \"updated_at\": 1679591515,\n        \"levels\": [\n            {\n                \"location_id\": \"loc_8GiCVuqZqBJi43v2WebaME\",\n                \"verified_qty\": 60,\n                \"id\": \"lvl_dnqwn23ir23irb23rb23uibc\"\n            },\n            {\n                \"location_id\": \"loc_dKa43ncARLdGENQPUq2CoX\",\n                \"verified_qty\": 10,\n                \"id\": \"lvl_fewfwef90c803cecee\"\n            }\n        ]\n    },\n    \"message\": \"You updated an item\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/item/{item}\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            },
+            {
+              "_type": "endpoint",
+              "name": "Retrieve Item",
+              "request": {
+                "description": "Gets a single item",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/items/:itemId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "items",
+                    ":itemId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "itemId",
+                      "value": "",
+                      "description": null
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  }
+                ],
+                "method": "GET",
+                "auth": null,
+                "body": null
+              },
+              "response": []
+            },
+            {
+              "_type": "endpoint",
+              "name": "List Items",
+              "request": {
+                "description": "Gets all items",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/items",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "items"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  }
+                ],
+                "method": "GET",
+                "auth": null,
+                "body": null
+              },
+              "response": []
+            },
+            {
+              "_type": "endpoint",
+              "name": "Delete",
+              "request": {
+                "description": "deletes a single item",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/items/:itemId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "items",
+                    ":itemId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "itemId",
+                      "description": null,
+                      "value": "debebw3933hden"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "auth": null,
+                "body": null
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "deletes a single item",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/items/:itemId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "items",
+                        ":itemId"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "itemId",
+                          "description": null,
+                          "value": "debebw3933hden"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "DELETE",
+                    "auth": null,
+                    "body": null
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"message\": \"You deleted an item\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/item/{item}\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "container",
+          "description": null,
+          "name": "Manifest",
+          "item": [
+            {
+              "_type": "endpoint",
+              "name": "Create Manifest",
+              "request": {
+                "description": "To create a manifest, you only need to include the location_id and specify the inventory items that you want to add.",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/manifest",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "manifest"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n    \"inventory\": [\n        {\n            \"id\": \"item_pu8iNbturZy5zvB4zaUZ8t\",\n            \"manifested_qty\": 50\n        },\n        {\n            \"sku\": \"DRC123\",\n            \"manifested_qty\": 50\n        },\n        {\n            \"gtin\": \"123456789\",\n            \"manifested_qty\": 50\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "To create a manifest, you only need to include the location_id and specify the inventory items that you want to add.",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/manifest",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "manifest"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n    \"inventory\": [\n        {\n            \"id\": \"item_pu8iNbturZy5zvB4zaUZ8t\",\n            \"manifested_qty\": 50\n        },\n        {\n            \"sku\": \"DRC123\",\n            \"manifested_qty\": 50\n        },\n        {\n            \"gtin\": \"123456789\",\n            \"manifested_qty\": 50\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"created_at\": 1679591515,\n        \"id\": \"msft_deuibcud2fwefwec33\",\n        \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n        \"status\": \"accepted\",\n        \"inventory\": [\n            {\n                \"id\": \"item_pu8iNbturZy5zvB4zaUZ8t\",\n                \"manifested_qty\": 50\n            },\n            {\n                \"sku\": \"DRC123\",\n                \"manifested_qty\": 50\n            },\n            {\n                \"gtin\": \"123456789\",\n                \"manifested_qty\": 50\n            }\n        ]\n    },\n    \"message\": \"You created a manifest\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/manifest\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            },
+            {
+              "_type": "endpoint",
+              "name": "Update Manifest",
+              "request": {
+                "description": "Before you can update a manifest, you'll need to update its status to accepted. When all items have been verified, you are able to update the status of the manifest to 'completed'.",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/manifest/:manifestId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "manifest",
+                    ":manifestId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "manifestId",
+                      "description": null,
+                      "value": "msft_deuibcud2fwefwec33"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"status\": \"accepted\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "Before you can update a manifest, you'll need to update its status to accepted. When all items have been verified, you are able to update the status of the manifest to 'completed'.",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/manifest/:manifestId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "manifest",
+                        ":manifestId"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "manifestId",
+                          "description": null,
+                          "value": "msft_deuibcud2fwefwec33"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "PX-API-KEY",
+                        "value": "{{apiKey}}",
+                        "type": "string",
+                        "description": null
+                      },
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"status\": \"accepted\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "description": null,
+                  "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"created_at\": 1679591515,\n        \"id\": \"msft_deuibcud2fwefwec33\",\n        \"location_id\": \"loc_afnHMjVUn3gnrvxU5zMvkX\",\n        \"status\": \"accepted\",\n        \"inventory\": [\n            {\n                \"id\": \"item_pu8iNbturZy5zvB4zaUZ8t\",\n                \"manifested_qty\": 50\n            },\n            {\n                \"sku\": \"DRC123\",\n                \"manifested_qty\": 50\n            },\n            {\n                \"gtin\": \"123456789\",\n                \"manifested_qty\": 50\n            }\n        ]\n    },\n    \"message\": \"You updated a manifest\",\n    \"errors\": [],\n    \"endpoint\": \"/v1/manifest/msft_deuibcud2fwefwec33\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ]
+            },
+            {
+              "_type": "endpoint",
+              "name": "Retrieve Manifest",
+              "request": {
+                "description": "Gets a single manifest",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/manifest/:manifestId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "manifest",
+                    ":manifestId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "manifestId",
+                      "value": "",
+                      "description": null
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  }
+                ],
+                "method": "GET",
+                "auth": null,
+                "body": null
+              },
+              "response": []
+            },
+            {
+              "_type": "endpoint",
+              "name": "List Manifest",
+              "request": {
+                "description": "Gets all manifests",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/manifest",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "manifest"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  }
+                ],
+                "method": "GET",
+                "auth": null,
+                "body": null
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "container",
+      "description": null,
+      "name": "Shipments",
+      "item": [
+        {
+          "_type": "endpoint",
+          "name": "Get Shipment Rates",
+          "request": {
+            "description": "There are three pieces of information we require to get rates: sender, \nrecipient, and parcel. There are also some additional options you can \npass in to configure the shipment.\n",
+            "url": {
+              "raw": "{{baseUrl}}/v1/shipments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "shipments"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "PX-API-KEY",
+                "value": "{{apiKey}}",
+                "type": "string",
+                "description": null
+              },
+              {
+                "type": "text",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sender\": {\n        \"name\": \"Jamie Jones\",\n        \"email\": \"jamie@packagex.io\",\n        \"phone\": \"4844836699\",\n        \"contact_id\": \"cwnwif2821\",\n        \"address\": {\n            \"id\": \"defnewfed_93392\",\n            \"hash\": \"dac0efe_w9dw\",\n            \"line1\": \"500 7th Ave\",\n            \"line2\": \"Fl 10\",\n            \"city\": \"New York\",\n            \"state\": \"New York\",\n            \"state_code\": \"NY\",\n            \"country\": \"United States\",\n            \"country_code\": \"US\",\n            \"postal_code\": \"10018\",\n            \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n            \"textarea\": \"500 7th Ave\",\n            \"timezone\": \"EST\",\n            \"verified\": true\n        }\n    },\n    \"recipient\": {\n        \"name\": \"Odin Oliver\",\n        \"email\": \"odin.oliver@packagex.io\",\n        \"phone\": \"4844836699\",\n        \"contact_id\": \"fwefwv28281\",\n        \"address\": {\n            \"id\": \"fefewfe_9292\",\n            \"hash\": \"efneif_2921\",\n            \"line1\": \"600 B. Street\",\n            \"line2\": \"Suite 300\",\n            \"city\": \"San Diego\",\n            \"state\": \"California\",\n            \"state_code\": \"CA\",\n            \"country\": \"United States\",\n            \"country_code\": \"US\",\n            \"postal_code\": \"90101\",\n            \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n            \"textarea\": \"600 B. Street\",\n            \"timezone\": \"PST\",\n            \"verified\": true\n        }\n    },\n    \"parcel\": {\n        \"length\": 2,\n        \"width\": 5,\n        \"height\": 4,\n        \"weight\": 1,\n        \"type\": \"usps_flat_rate_envelope\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "There are three pieces of information we require to get rates: sender, \nrecipient, and parcel. There are also some additional options you can \npass in to configure the shipment.\n",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/shipments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "shipments"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sender\": {\n        \"name\": \"Jamie Jones\",\n        \"email\": \"jamie@packagex.io\",\n        \"phone\": \"4844836699\",\n        \"contact_id\": \"cwnwif2821\",\n        \"address\": {\n            \"id\": \"defnewfed_93392\",\n            \"hash\": \"dac0efe_w9dw\",\n            \"line1\": \"500 7th Ave\",\n            \"line2\": \"Fl 10\",\n            \"city\": \"New York\",\n            \"state\": \"New York\",\n            \"state_code\": \"NY\",\n            \"country\": \"United States\",\n            \"country_code\": \"US\",\n            \"postal_code\": \"10018\",\n            \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n            \"textarea\": \"500 7th Ave\",\n            \"timezone\": \"EST\",\n            \"verified\": true\n        }\n    },\n    \"recipient\": {\n        \"name\": \"Odin Oliver\",\n        \"email\": \"odin.oliver@packagex.io\",\n        \"phone\": \"4844836699\",\n        \"contact_id\": \"fwefwv28281\",\n        \"address\": {\n            \"id\": \"fefewfe_9292\",\n            \"hash\": \"efneif_2921\",\n            \"line1\": \"600 B. Street\",\n            \"line2\": \"Suite 300\",\n            \"city\": \"San Diego\",\n            \"state\": \"California\",\n            \"state_code\": \"CA\",\n            \"country\": \"United States\",\n            \"country_code\": \"US\",\n            \"postal_code\": \"90101\",\n            \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n            \"textarea\": \"600 B. Street\",\n            \"timezone\": \"PST\",\n            \"verified\": true\n        }\n    },\n    \"parcel\": {\n        \"length\": 2,\n        \"width\": 5,\n        \"height\": 4,\n        \"weight\": 1,\n        \"type\": \"usps_flat_rate_envelope\"\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "description": null,
+              "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"amount\": 1324,\n        \"billed_amount\": 1023,\n        \"provider\": {\n            \"name\": \"UPS\",\n            \"id\": \"2dij3dn9\",\n            \"logo_url\": \"NA\",\n            \"support_email\": \"support@ups.com\",\n            \"support_phone\": \"1-800-742-5877\",\n            \"support_url\": \"https://www.ups.com/us/en/support/contact-us.page\",\n            \"marketplace\": false\n        },\n        \"created_at\": 1679245915,\n        \"updated_at\": 1679245933,\n        \"currency\": \"usd\",\n        \"estimated_delivery\": 1679591515,\n        \"filters\": [\n            \"completed\"\n        ],\n        \"fulfillment_id\": \"efewifb31221\",\n        \"id\": \"defbei39dkna\",\n        \"status\": \"out_for_delivery\",\n        \"lead_time_mins\": 13,\n        \"paid\": true,\n        \"parcels\": [\n            {\n                \"id\": \"ebfweufe922828\",\n                \"length\": 2,\n                \"width\": 5,\n                \"height\": 4,\n                \"weight\": 1,\n                \"type\": \"usps_flat_rate_envelope\"\n            }\n        ],\n        \"purchased_rate\": {\n            \"id\": \"dndine29dnc9\",\n            \"amount\": 1203,\n            \"billed_amount\": 9023,\n            \"service_level\": {\n                \"id\": \"3bicjss933jckjcsww\",\n                \"name\": \"Same Day\",\n                \"days\": 1,\n                \"estimated_delivery\": 1679591515,\n                \"terms\": \"Today by 9pm\",\n                \"pickup_at\": 1679591623\n            },\n            \"provider\": {\n                \"name\": \"UPS\",\n                \"id\": \"2dij3dn9\",\n                \"logo_url\": \"NA\",\n                \"support_email\": \"support@ups.com\",\n                \"support_phone\": \"1-800-742-5877\",\n                \"support_url\": \"https://www.ups.com/us/en/support/contact-us.page\",\n                \"marketplace\": false\n            }\n        },\n        \"rates\": [\n            {\n                \"id\": \"dndine29dnc9\",\n                \"amount\": 1203,\n                \"billed_amount\": 9023,\n                \"service_level\": {\n                    \"id\": \"3bicjss933jckjcsww\",\n                    \"name\": \"Same Day\",\n                    \"days\": 1,\n                    \"estimated_delivery\": 1679591515,\n                    \"terms\": \"Today by 9pm\",\n                    \"pickup_at\": 1679591623\n                },\n                \"provider\": {\n                    \"name\": \"UPS\",\n                    \"id\": \"2dij3dn9\",\n                    \"logo_url\": \"NA\",\n                    \"support_email\": \"support@ups.com\",\n                    \"support_phone\": \"1-800-742-5877\",\n                    \"support_url\": \"https://www.ups.com/us/en/support/contact-us.page\",\n                    \"marketplace\": false\n                }\n            }\n        ],\n        \"recipient\": {\n            \"name\": \"Odin Oliver\",\n            \"email\": \"odin.oliver@packagex.io\",\n            \"phone\": \"4844836699\",\n            \"contact_id\": \"fwefwv28281\",\n            \"address\": {\n                \"id\": \"fefewfe_9292\",\n                \"hash\": \"efneif_2921\",\n                \"line1\": \"600 B. Street\",\n                \"line2\": \"Suite 300\",\n                \"city\": \"San Diego\",\n                \"state\": \"California\",\n                \"state_code\": \"CA\",\n                \"country\": \"United States\",\n                \"country_code\": \"US\",\n                \"postal_code\": \"90101\",\n                \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n                \"textarea\": \"600 B. Street\",\n                \"timezone\": \"PST\",\n                \"verified\": true\n            }\n        },\n        \"sender\": {\n            \"name\": \"Jamie Jones\",\n            \"email\": \"jamie@packagex.io\",\n            \"phone\": \"4844836699\",\n            \"contact_id\": \"cwnwif2821\",\n            \"address\": {\n                \"id\": \"defnewfed_93392\",\n                \"hash\": \"dac0efe_w9dw\",\n                \"line1\": \"500 7th Ave\",\n                \"line2\": \"Fl 10\",\n                \"city\": \"New York\",\n                \"state\": \"New York\",\n                \"state_code\": \"NY\",\n                \"country\": \"United States\",\n                \"country_code\": \"US\",\n                \"postal_code\": \"10018\",\n                \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n                \"textarea\": \"500 7th Ave\",\n                \"timezone\": \"EST\",\n                \"verified\": true\n            }\n        },\n        \"organization_id\": \"dwndiwqe22en2\",\n        \"invoice_id\": \"verwdwdwq3j33x2\",\n        \"kiosk_id\": \"fcewueek9393\",\n        \"tracking_number\": \"wefewfwecn290ioieqoi1221239\",\n        \"tracking_url\": \"https://www.ups.com/track?loc=en_US&requester=ST/\",\n        \"tracking_updates\": [\n            {\n                \"address\": {\n                    \"id\": \"defnewfed_93392\",\n                    \"hash\": \"dac0efe_w9dw\",\n                    \"line1\": \"500 7th Ave\",\n                    \"line2\": \"Fl 10\",\n                    \"city\": \"New York\",\n                    \"state\": \"New York\",\n                    \"state_code\": \"NY\",\n                    \"country\": \"United States\",\n                    \"country_code\": \"US\",\n                    \"postal_code\": \"10018\",\n                    \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n                    \"textarea\": \"500 7th Ave\",\n                    \"timezone\": \"EST\",\n                    \"verified\": true\n                },\n                \"status\": \"in_transit\",\n                \"message\": \"In Transit\",\n                \"images\": [],\n                \"created_at\": 1679591515,\n                \"updated_at\": 1679591623,\n                \"event\": \"shipment.tracking_updated\"\n            },\n            {\n                \"address\": {\n                    \"id\": \"defnewfed_93392\",\n                    \"hash\": \"dac0efe_w9dw\",\n                    \"line1\": \"500 7th Ave\",\n                    \"line2\": \"Fl 10\",\n                    \"city\": \"New York\",\n                    \"state\": \"New York\",\n                    \"state_code\": \"NY\",\n                    \"country\": \"United States\",\n                    \"country_code\": \"US\",\n                    \"postal_code\": \"10018\",\n                    \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n                    \"textarea\": \"500 7th Ave\",\n                    \"timezone\": \"EST\",\n                    \"verified\": true\n                },\n                \"status\": \"out_for_delivery\",\n                \"message\": \"Out for Delivery\",\n                \"images\": [],\n                \"created_at\": 1679591515,\n                \"updated_at\": 1679591623,\n                \"event\": \"shipment.tracking_updated\"\n            }\n        ],\n        \"coordinates\": [\n            37.7749,\n            122.4194\n        ]\n    },\n    \"message\": \"You created a shipment\",\n    \"errors\": [],\n    \"events\": [\n        \"shipment.rates_generated\",\n        \"shipment.tracking_updated\"\n    ],\n    \"endpoint\": \"/v1/shipments\"\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "_type": "endpoint",
+          "name": "Purchase Shipment Rate",
+          "request": {
+            "description": "Purchase Shipment Rate",
+            "url": {
+              "raw": "{{baseUrl}}/v1/shipments/:shipmentId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "shipments",
+                ":shipmentId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "shipmentId",
+                  "description": null,
+                  "value": "ship_czhgjrk5JaVvyATPDbyURp"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "PX-API-KEY",
+                "value": "{{apiKey}}",
+                "type": "string",
+                "description": null
+              },
+              {
+                "type": "text",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"rate_id\": \"rate_bdc2f190408545ec8a118886fd5e1dee\",\n    \"payment_reference\": \"Sandbox Department\",\n    \"label_size\": \"4x6\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "Purchase Shipment Rate",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/shipments/:shipmentId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "shipments",
+                    ":shipmentId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "shipmentId",
+                      "description": null,
+                      "value": "ship_czhgjrk5JaVvyATPDbyURp"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "PX-API-KEY",
+                    "value": "{{apiKey}}",
+                    "type": "string",
+                    "description": null
+                  },
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"rate_id\": \"rate_bdc2f190408545ec8a118886fd5e1dee\",\n    \"payment_reference\": \"Sandbox Department\",\n    \"label_size\": \"4x6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "description": null,
+              "body": "{\n    \"status\": 200,\n    \"data\": {\n        \"amount\": 1324,\n        \"billed_amount\": 1023,\n        \"provider\": {\n            \"name\": \"UPS\",\n            \"id\": \"2dij3dn9\",\n            \"logo_url\": \"NA\",\n            \"support_email\": \"support@ups.com\",\n            \"support_phone\": \"1-800-742-5877\",\n            \"support_url\": \"https://www.ups.com/us/en/support/contact-us.page\",\n            \"marketplace\": false\n        },\n        \"created_at\": 1679245915,\n        \"updated_at\": 1679245933,\n        \"currency\": \"usd\",\n        \"estimated_delivery\": 1679591515,\n        \"filters\": [\n            \"completed\"\n        ],\n        \"fulfillment_id\": \"efewifb31221\",\n        \"id\": \"defbei39dkna\",\n        \"status\": \"out_for_delivery\",\n        \"lead_time_mins\": 13,\n        \"paid\": true,\n        \"parcels\": [\n            {\n                \"id\": \"ebfweufe922828\",\n                \"length\": 2,\n                \"width\": 5,\n                \"height\": 4,\n                \"weight\": 1,\n                \"type\": \"usps_flat_rate_envelope\"\n            }\n        ],\n        \"purchased_rate\": {\n            \"id\": \"dndine29dnc9\",\n            \"amount\": 1203,\n            \"billed_amount\": 9023,\n            \"service_level\": {\n                \"id\": \"3bicjss933jckjcsww\",\n                \"name\": \"Same Day\",\n                \"days\": 1,\n                \"estimated_delivery\": 1679591515,\n                \"terms\": \"Today by 9pm\",\n                \"pickup_at\": 1679591623\n            },\n            \"provider\": {\n                \"name\": \"UPS\",\n                \"id\": \"2dij3dn9\",\n                \"logo_url\": \"NA\",\n                \"support_email\": \"support@ups.com\",\n                \"support_phone\": \"1-800-742-5877\",\n                \"support_url\": \"https://www.ups.com/us/en/support/contact-us.page\",\n                \"marketplace\": false\n            }\n        },\n        \"rates\": [\n            {\n                \"id\": \"dndine29dnc9\",\n                \"amount\": 1203,\n                \"billed_amount\": 9023,\n                \"service_level\": {\n                    \"id\": \"3bicjss933jckjcsww\",\n                    \"name\": \"Same Day\",\n                    \"days\": 1,\n                    \"estimated_delivery\": 1679591515,\n                    \"terms\": \"Today by 9pm\",\n                    \"pickup_at\": 1679591623\n                },\n                \"provider\": {\n                    \"name\": \"UPS\",\n                    \"id\": \"2dij3dn9\",\n                    \"logo_url\": \"NA\",\n                    \"support_email\": \"support@ups.com\",\n                    \"support_phone\": \"1-800-742-5877\",\n                    \"support_url\": \"https://www.ups.com/us/en/support/contact-us.page\",\n                    \"marketplace\": false\n                }\n            }\n        ],\n        \"recipient\": {\n            \"name\": \"Odin Oliver\",\n            \"email\": \"odin.oliver@packagex.io\",\n            \"phone\": \"4844836699\",\n            \"contact_id\": \"fwefwv28281\",\n            \"address\": {\n                \"id\": \"fefewfe_9292\",\n                \"hash\": \"efneif_2921\",\n                \"line1\": \"600 B. Street\",\n                \"line2\": \"Suite 300\",\n                \"city\": \"San Diego\",\n                \"state\": \"California\",\n                \"state_code\": \"CA\",\n                \"country\": \"United States\",\n                \"country_code\": \"US\",\n                \"postal_code\": \"90101\",\n                \"formatted_address\": \"600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101\",\n                \"textarea\": \"600 B. Street\",\n                \"timezone\": \"PST\",\n                \"verified\": true\n            }\n        },\n        \"sender\": {\n            \"name\": \"Jamie Jones\",\n            \"email\": \"jamie@packagex.io\",\n            \"phone\": \"4844836699\",\n            \"contact_id\": \"cwnwif2821\",\n            \"address\": {\n                \"id\": \"defnewfed_93392\",\n                \"hash\": \"dac0efe_w9dw\",\n                \"line1\": \"500 7th Ave\",\n                \"line2\": \"Fl 10\",\n                \"city\": \"New York\",\n                \"state\": \"New York\",\n                \"state_code\": \"NY\",\n                \"country\": \"United States\",\n                \"country_code\": \"US\",\n                \"postal_code\": \"10018\",\n                \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n                \"textarea\": \"500 7th Ave\",\n                \"timezone\": \"EST\",\n                \"verified\": true\n            }\n        },\n        \"organization_id\": \"dwndiwqe22en2\",\n        \"invoice_id\": \"verwdwdwq3j33x2\",\n        \"kiosk_id\": \"fcewueek9393\",\n        \"tracking_number\": \"wefewfwecn290ioieqoi1221239\",\n        \"tracking_url\": \"https://www.ups.com/track?loc=en_US&requester=ST/\",\n        \"tracking_updates\": [\n            {\n                \"address\": {\n                    \"id\": \"defnewfed_93392\",\n                    \"hash\": \"dac0efe_w9dw\",\n                    \"line1\": \"500 7th Ave\",\n                    \"line2\": \"Fl 10\",\n                    \"city\": \"New York\",\n                    \"state\": \"New York\",\n                    \"state_code\": \"NY\",\n                    \"country\": \"United States\",\n                    \"country_code\": \"US\",\n                    \"postal_code\": \"10018\",\n                    \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n                    \"textarea\": \"500 7th Ave\",\n                    \"timezone\": \"EST\",\n                    \"verified\": true\n                },\n                \"status\": \"in_transit\",\n                \"message\": \"In Transit\",\n                \"images\": [],\n                \"created_at\": 1679591515,\n                \"updated_at\": 1679591623,\n                \"event\": \"shipment.tracking_updated\"\n            },\n            {\n                \"address\": {\n                    \"id\": \"defnewfed_93392\",\n                    \"hash\": \"dac0efe_w9dw\",\n                    \"line1\": \"500 7th Ave\",\n                    \"line2\": \"Fl 10\",\n                    \"city\": \"New York\",\n                    \"state\": \"New York\",\n                    \"state_code\": \"NY\",\n                    \"country\": \"United States\",\n                    \"country_code\": \"US\",\n                    \"postal_code\": \"10018\",\n                    \"formatted_address\": \"500 7th Ave, Fl 10, New York, NY, 10018\",\n                    \"textarea\": \"500 7th Ave\",\n                    \"timezone\": \"EST\",\n                    \"verified\": true\n                },\n                \"status\": \"out_for_delivery\",\n                \"message\": \"Out for Delivery\",\n                \"images\": [],\n                \"created_at\": 1679591515,\n                \"updated_at\": 1679591623,\n                \"event\": \"shipment.tracking_updated\"\n            }\n        ],\n        \"coordinates\": [\n            37.7749,\n            122.4194\n        ]\n    },\n    \"message\": \"You purchased a shipping label\",\n    \"errors\": [],\n    \"events\": [\n        \"shipment.purchase\",\n        \"shipment.tracking_updated\"\n    ],\n    \"endpoint\": \"/v1/shipments/ship_czhgjrk5JaVvyATPDbyURp\"\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "_type": "endpoint",
+          "name": "Refetch Shipment Rates",
+          "request": {
+            "description": "After you already fetched rates, you can also fetch new rates. You'll want to do this if:\n  - Your rate has expired because the rates_generated_at is more than 15 minutes from now.\n  - You want to update your options that you added into the shipment.\n",
+            "url": {
+              "raw": "{{baseUrl}}/v1/shipments/:shipmentId/refetch",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "shipments",
+                ":shipmentId",
+                "refetch"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "shipmentId",
+                  "value": "",
+                  "description": null
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "PX-API-KEY",
+                "value": "{{apiKey}}",
+                "type": "string",
+                "description": null
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"options\": {\n        \"provider_timeout\": 0,\n        \"verify_address\": true,\n        \"checkout_total\": 0,\n        \"request_provider_pickup\": true,\n        \"providers\": [\n            \"example\"\n        ],\n        \"service_levels\": [\n            \"example\"\n        ],\n        \"max_delivery_days\": 0,\n        \"rate_types\": [\n            \"in_person_pickup\"\n        ]\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "_type": "endpoint",
+          "name": "List Shipments",
+          "request": {
+            "description": "Lists shipments up to the specified limit starting at the specified page",
+            "url": {
+              "raw": "{{baseUrl}}/v1/shipments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "shipments"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "PX-API-KEY",
+                "value": "{{apiKey}}",
+                "type": "string",
+                "description": null
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": null
+          },
+          "response": []
+        },
+        {
+          "_type": "endpoint",
+          "name": "Retrieve Shipment",
+          "request": {
+            "description": "Retrieves a specific shipment",
+            "url": {
+              "raw": "{{baseUrl}}/v1/shipments/:shipmentId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "shipments",
+                ":shipmentId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "shipmentId",
+                  "value": "",
+                  "description": null
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "PX-API-KEY",
+                "value": "{{apiKey}}",
+                "type": "string",
+                "description": null
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": null
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
